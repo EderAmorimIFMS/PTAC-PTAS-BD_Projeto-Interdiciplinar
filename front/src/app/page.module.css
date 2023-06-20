@@ -1,0 +1,147 @@
+.main {
+    text-align: center;
+}
+
+.header {
+    background-color: black
+}
+
+.h1 {
+    color: white;
+    font-size: 50px;
+    text-shadow: 2px 2px black;
+}
+
+.navbar {
+    border-top: 2px solid white;
+    border-bottom: 3px solid black;
+    display: flex;
+    background-color: #515151;
+    justify-content: space-evenly;
+}
+   
+   .links {
+     text-decoration: none;
+     color: white;
+     padding: 10px;
+     border: 2px solid white;
+     border-radius: 10px;
+     width: 80px;
+     margin: 20px;
+     text-align: center;
+   }
+   
+   .formulario {
+     margin: 0 auto;
+     margin-top: 50px;
+     width: 50%;
+     border: 3px solid black;
+     padding: 20px;
+     border-radius: 10px;
+   }
+   
+   .input_padrao {
+    display: block;
+    margin: 0 0 20px;
+    padding: 5px;
+    width: 97%;
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-bottom: 3px outset black;
+   }
+
+   .text_area{
+    display: block;
+    margin: 0 0 20px;
+    padding: 5px;
+    width: 97%;
+    background-color: transparent;
+    color: black;
+    border: none;
+    border: 3px outset black;
+   }
+   
+   .botoes {
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+   }
+   
+   .botoes a {
+    text-decoration: none;
+    border: 3px outset black;
+    font-size: 21px;
+    width: 31%;
+    text-align: center;
+    color: black;
+    border-radius: 10px;
+   }
+   
+   .botao {
+     border: 3px outset black;
+     font-size: 21px;
+     background-color: white;
+     color: black;
+     width: 31%;
+     border-radius: 10px;
+    }
+    
+/*Ver mais*/
+.containerv {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 10px;
+    background-color: white;
+    width: 60%;
+    margin: auto;
+}
+  
+.botaoV {
+    border: 3px outset black;
+    font-size: 21px;
+    background-color: white;
+    color: black;
+    width: 31%;
+    border-radius: 10px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 30px;
+    background-color: white;
+}
+
+.card {
+    width: 250px;
+    border: 2px inset black;
+    padding-left: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    box-shadow: inset;
+    display: block;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.imgC {
+    width: 220px;
+    height: 300px;
+}
+
+.tituloC {
+    border-top: 1px solid black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.linkV {
+    align-self: center;
+    background-color: grey;
+    color: white;
+    font-size: 10px;
+}
