@@ -37,8 +37,8 @@ export default async function VerMais({ params }){
   }
 
   return (
-    <main className={style.main}>
     <div className={header}>
+    <h1 className={style.h1}>{produto.titulo}</h1>
     <nav className={style.navbar}>
       <Link className={style.links} href="/">Home</Link>
       <Link className={style.links} href="/cadastro">Cadastrar</Link>
@@ -47,11 +47,11 @@ export default async function VerMais({ params }){
 
     <div className={style.containerV}>
 
-        <div className={style.divImg}>
+        <div className={style.imgV}>
             <Image src={produto.imgV}></Image>
         </div>
 
-        <div className={style.verInfo}>
+        <div className={style.informacao}>
             <h1 className={style.verInfo}>{produto.tituloV}</h1>
             <p className={style.dataV}>{produto.data_cadastro}</p>
             <p className={style.precoV}>R${produto.preco}</p>
@@ -63,7 +63,5 @@ export default async function VerMais({ params }){
         <button onClick={e => e.preventDefault(remover())} className={style.botaoR}>Remover</button>
         <Link href='/' className={style.linkV}>Voltar</Link>
       </div>
- 
-    </main>
   )
 }
