@@ -42,7 +42,8 @@ export default function Cadastro() {
               <Link className={style.links} href="/cadastro">Cadastrar</Link>
             </nav>
             </div>
-
+        
+            <div className={containerC}>
             <form action='' onSubmit={cadastrar} className={style.formulario}>
                 <input placeholder='Informe o nome do produto' nome="titulo" type="text" className={style.input_padrao}
                     onChange={e => setTitulo(e.target.value)}></input>
@@ -65,7 +66,7 @@ export default function Cadastro() {
                     <a href='/' className={style.linkV}>Voltar</a>
                 </div>
             </form>
-        </main>
+           </div>
     );
 
 }
