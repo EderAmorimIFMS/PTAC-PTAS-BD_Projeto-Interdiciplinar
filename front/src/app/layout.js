@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={style.main}>
       {children}
-      <div className={style.footer>
+      <div className={style.foote}r>
       <p>copzright: eder da silva amorim e erick da silva amorim</p>
       </div>
       </body>
