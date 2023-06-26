@@ -12,8 +12,6 @@ export default async function Home() {
   const produtos = await req.json();
 
   return (
- <main className={style.main}>
-
 <div className={style.header}>
     <h1 className={style.h1}>Produtos</h1>
 
@@ -23,26 +21,22 @@ export default async function Home() {
     </div>
  </div>
 
-   <div className={style.container}>
+   <div className={style.containerP}>
     {produtos.map(item => (
 
       <div className={style.card} key={item.id}>
 
-        <Image src={item.imgC} width={30}></Image>
-        <p className={style.titulozc}>{item.titulo}</p>
+        <img src={item.imgC} width={30}></img>
+        <p className={style.tituloC}>{item.titulo}</p>
         <p className={style.dataC}>{item.data_cadastro}</p>
         <p className={style.precoC}>{item.preco}</p>
         
         <div className={style.botoes}>
-          <Link href={`produto/${item.id}`} className={style.links}>ver mais</Link>
+          <Link href={`produto/${item.id}`} className={style.linkV}>ver mais</Link>
         </div>
 
       </div>
       ))} 
     </div>
-     <div className="footer">
-                <p>copzright: eder da silva amorim e erick da silva amorim</p>
-            </div>
-    </main>
   )
 }
