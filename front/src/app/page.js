@@ -26,7 +26,7 @@ export default async function Home() {
 
       <div className={style.card} key={item.id}>
 
-        <img src={item.imgC} width={30}></img>
+        <img src={item.imgC}></img>
         <p className={style.tituloC}>{item.titulo}</p>
         <p className={style.dataC}>{item.data_cadastro}</p>
         <p className={style.precoC}>{item.preco}</p>
