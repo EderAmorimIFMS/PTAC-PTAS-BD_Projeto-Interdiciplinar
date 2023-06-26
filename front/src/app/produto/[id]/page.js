@@ -52,7 +52,7 @@ export default async function VerMais({ params }){
         </div>
 
         <div className={style.informacao}>
-            <h1 className={style.verInfo}>{produto.tituloV}</h1>
+            <h1 className={style.tituloV}>{produto.tituloV}</h1>
             <p className={style.dataV}>{produto.data_cadastro}</p>
             <p className={style.precoV}>R${produto.preco}</p>
             <p className={style.descricao}>{produto.descricao}</p>
