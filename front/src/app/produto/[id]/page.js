@@ -48,7 +48,7 @@ export default async function VerMais({ params }){
     <div className={style.containerV}>
 
         <div className={style.imgV}>
-            <Image src={produto.imgV}></Image>
+            <Image src={produto.imgV}></img>
         </div>
 
         <div className={style.informacao}>
