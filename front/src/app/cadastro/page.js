@@ -34,7 +34,6 @@ export default function Cadastro() {
         }).then(function(){ route.push("/")}).catch(()=> console.log("Não foi possível cadastrar!"))
     }
     return (
-        <main className={style.main}>
             <div className={style.header}>
             <h1 className={style.h1}>Cadastrar</h1>
 
@@ -46,24 +45,24 @@ export default function Cadastro() {
 
             <form action='' onSubmit={cadastrar} className={style.formulario}>
                 <input placeholder='Informe o nome do produto' nome="titulo" type="text" className={style.input_padrao}
-                    onChange={e => setTitulo(e.target.value)}></input><br/>
+                    onChange={e => setTitulo(e.target.value)}></input>
 
                 <input placeholder='Informe a data de cadastro' nome="data_cadastro" type="date" className={style.input_padrao}
-                    onChange={e => setData_Cadastro(e.target.value)}></input><br/>
+                    onChange={e => setData_Cadastro(e.target.value)}></input>
 
                 <input placeholder='Informe o preço' nome="preco" type="text" className={style.input_padrao}
-                    onChange={e => setPreco(e.target.value)}></input><br/>
+                    onChange={e => setPreco(e.target.value)}></input>
 
                 <input placeholder='Informe o URL da imagem' nome="imagem" type="text" className={style.input_padrao}
-                    onChange={e => setImagem(e.target.value)}></input><br/>
+                    onChange={e => setImagem(e.target.value)}></input>
 
                 <textarea placeholder='Faça uma breve descrição do produto' nome="descricao" type="text" className={style.text_area}
                     onChange={e => setDescricao(e.target.value)}
                     rows="5" cols="30"></textarea><br/>
 
                 <div className={style.botoes}>
-                    <button type='submit' className={style.botao}>Cadastrar</button>
-                    <a href='/' className={style.LinkV}>Voltar</a>
+                    <button type='submit' className={style.botaoC}>Cadastrar</button>
+                    <a href='/' className={style.linkV}>Voltar</a>
                 </div>
             </form>
         </main>
