@@ -1,67 +1,56 @@
 'use client'
 
-import Image from 'next/image'
-import style from '../page.module.css'
-import Link from 'next/link'
+import '../../style.css'
 import { useRouter } from "next/navigation";
 
 export default async function VerMais({ params }){
 
-  const router = useRouter();
-  const id = { id: parseInt(params.id) }
+const router = useRouter();
+const id = { id: parseInt(params.id) };
+const idJson = JSON.stringify(id);
 
-  const idJson = JSON.stringify(id);
+const req = await fetch(`http://localhost:3004/produto/${id}`, {
+    method: "POST",
+    cache: "no-cache",
+    mode: 'no-cors',
+    headers: { 'content-type': 'application/json' },
+    body: idJson
+})
 
-  const req = await fetch("http://localhost:3004/produto", {
-      method: "POST",
-      cache: "no-cache",
-      mode: 'no-cors',
-      headers: { 'content-type': 'application/json' },
-      body: idJson
-  })
-  const produto = await req.json();
+const produto = await req.json();
 
 
-  const remover = () => {
-      console.log(idJson)
-      try {
-          fetch("http://localhost:3004/produto", {
-              method: "DELETE",
-              headers: { 'content-type': 'application/json' },
-              body: idJson
-          })
-          router.push("/");
-      } catch (error) {
-          alert("Ocorreu um erro" + error)
-      }
-  }
+const remover = () => {
+    console.log(idJson)
+    try {
+        fetch(`http://localhost:3004/produto/${id}`, {
+            method: "DELETE",
+            headers: { 'content-type': 'application/json' },
+            body: idJson
+        })
+        router.push("/");
+    } catch (error) {
+        alert("Ocorreu um erro" + error)
+    }
+}
 
-  return (
-    <div className={header}>
-    <h1 className={style.h1}>{produto.titulo}</h1>
-    <nav className={style.navbar}>
-      <Link className={style.links} href="/">Home</Link>
-      <Link className={style.links} href="/cadastro">Cadastrar</Link>
-    </nav>
+return (
+<div className='containerV'>
+    <div className='img-vermais'>
+        <img src={produto.img-vermais}/>
     </div>
 
-    <div className={style.containerV}>
+    <div className='informacao-vermais}'>
+        <h1 className='tituloV'>{produto.titulo-vermais}</h1>
+        <p className='dataV'>{produto.data_cadastro-vermais}</p>
+        <p className='precoV'>R${produto.preco-vermais}</p>
+        <p className='descricao'>{produto.descricao-vermais}</p>
+    </div>
 
-        <div className={style.imgV}>
-            <Image src={produto.imgV}></img>
-        </div>
-
-        <div className={style.informacao}>
-            <h1 className={style.tituloV}>{produto.tituloV}</h1>
-            <p className={style.dataV}>{produto.data_cadastro}</p>
-            <p className={style.precoV}>R${produto.preco}</p>
-            <p className={style.descricao}>{produto.descricao}</p>
-      </div>
-      </div>
-
-      <div className={style.botoes}>
-        <button onClick={e => e.preventDefault(remover())} className={style.botaoR}>Remover</button>
-        <Link href='/' className={style.linkV}>Voltar</Link>
-      </div>
-  )
+    <div className='botoes-vermais'>
+        <button onClick={e => e.preventDefault(remover())} className='botao-red'>Remover</button>
+        <Link href='/' className='link-vermais'>Voltar</Link>
+    </div>
+</div>
+)
 }

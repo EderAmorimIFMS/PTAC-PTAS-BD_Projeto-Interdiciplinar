@@ -1,4 +1,4 @@
-import style from 'page.module.css'
+import './style.css'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -11,9 +11,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={style.main}>
+      
+      <body className='main'>
       {children}
-      <div className={style.foote}r>
+      <div className='footer'>
       <p>copzright: eder da silva amorim e erick da silva amorim</p>
       </div>
       </body>
